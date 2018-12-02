@@ -1,0 +1,56 @@
+{
+    "name": "Scan Image with TwistLock",
+    "source": "https://github.com/codefresh-io/plugins/tree/master/plugins/cfstep-twistlock",
+    "step_id": "custom-twistlock-scan-image",
+    "author": "Benjamin Franklin",
+    "description": "Scan a registry-hosted Docker image using TwistLock",
+    "input": [
+        {
+            "source": "user_pipeline_argument",
+            "description": "Registry to scan",
+            "source_arg": "registry",
+            "mapped_to": "REGISTRY"
+        },
+        {
+            "source": "user_pipeline_argument",
+            "description": "Repository name",
+            "source_arg": "repo_name",
+            "mapped_to": "REPO_NAME"
+        },
+        {
+            "source": "user_pipeline_argument",
+            "description": "Tag name",
+            "source_arg": "repo_tag",
+            "mapped_to": "REPO_TAG"
+        },
+        {
+            "source": "filesystem",
+            "description": "Input folder",
+            "name": "0b1df827-95bc-49fc-bde7-179aa5e2c546",
+            "pointer_arg": "folder",
+            "mapped_to": "/my/cf_volume/path/"
+        },
+        {
+            "source": "integration",
+            "name": "0b1df827-95bc-49fc-bde7-179aa5e2c546",
+            "source_arg": "API_KEY",
+            "mapped_to": "API_KEY"
+        }
+    ],
+    "output": [],
+    "pipeline": {
+        "version": "1.0",
+        "TLScan": {
+            "title": "Twistlock Scan",
+            "image": "codefresh/cfstep-twistlock",
+            "environment": [
+                "TL_API_TOKEN=${{API_KEY}}",
+                "TL_REGISTRY=${{REGISTRY}}",
+                "TL_IMAGE_NAME=${{REPO_NAME}}",
+                "TL_IMAGE_TAG=${{REPO_TAG}}"
+            ]
+        }
+    },
+    "create": "2018-11-18T07:49:19.360Z",
+    "version": "0.1"
+}

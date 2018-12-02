@@ -1,0 +1,40 @@
+{
+    "name": "Send message to Slack",
+    "source": "https://github.com/codefresh-io/plugins/blob/master/plugins/slack/README.md",
+    "step_id": "custom-slack-send-message",
+    "author": "Coral Pradeep",
+    "description": "Sends a message to a Slack channel",
+    "input": [
+        {
+            "source": "user_pipeline_argument",
+            "description": "The message to send to the configured channel",
+            "source_arg": "message_template",
+            "mapped_to": "SLACK_WEBHOOK_URL"
+        },
+        {
+            "source": "integration",
+            "name": "16b1e006-e0e9-420c-b182-3f4f9e360356",
+            "source_arg": "message_template",
+            "mapped_to": "SLACK_WEBHOOK_URL"
+        }
+    ],
+    "output": [],
+    "pipeline": {
+        "version": "1.0",
+        "send_message": {
+            "title": "Sending message to Slack",
+            "image": "codefresh/slack-message-sender",
+            "commands": [
+                "slack-message-sender send"
+            ],
+            "environment": [
+                "WEBHOOK_URL=${{API_KEY}}",
+                "SLACK_MESSAGE=${{REGISTRY}}",
+                "TL_IMAGE_NAME=${{REPO_NAME}}",
+                "TL_IMAGE_TAG=${{REPO_TAG}}"
+            ]
+        }
+    },
+    "create": "2018-11-18T07:49:19.360Z",
+    "version": "0.1"
+}

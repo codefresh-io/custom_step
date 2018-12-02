@@ -1,0 +1,12 @@
+{
+    "name": "Create Helm Chart",
+    "source": "https://codefresh.io/docs/docs/new-helm/using-helm-in-codefresh-pipeline/",
+    "step_id": "create-helm-chart",
+    "author": "Rhia Pugh",
+    "description": "Creates and publishes a Helm Chart",
+    "input": [],
+    "output": [],
+    "pipeline": {},
+    "create": "2018-11-18T07:49:19.360Z",
+    "version": "0.1"
+}

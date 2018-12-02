@@ -1,0 +1,37 @@
+{
+    "name": "Trigger Jenkins Job",
+    "source": "https://github.com/codefresh-io/plugins/blob/master/plugins/run-jenkins-job",
+    "step_id": "trigger-jenkins-job",
+    "author": "Alfred Davie",
+    "description": "Triggers a Jenkins job",
+    "input": [
+        {
+            "source": "user_pipeline_argument",
+            "description": "Jenkins Master URL",
+            "source_arg": "url",
+            "mapped_to": "JENKINS_URL"
+        },
+        {
+            "source": "user_pipeline_argument",
+            "description": "Jenkins User Name",
+            "source_arg": "user",
+            "mapped_to": "JENKINS_USER"
+        },
+        {
+            "source": "user_pipeline_argument",
+            "description": "Jenkins Token",
+            "source_arg": "token",
+            "mapped_to": "JENKINS_TOKEN"
+        },
+        {
+            "source": "user_pipeline_argument",
+            "description": "Jenkins Job Name",
+            "source_arg": "token",
+            "mapped_to": "JENKINS_JOB"
+        }
+    ],
+    "output": [],
+    "pipeline": {},
+    "create": "2018-11-18T07:49:19.360Z",
+    "version": "0.1"
+}
