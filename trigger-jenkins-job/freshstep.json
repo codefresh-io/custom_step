@@ -1,0 +1,30 @@
+{
+  "title": "Trigger Jenkins Job",
+  "description": "Triggers a Jenkins job",
+  "handle": "trigger-jenkins-job",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Vadim Waisman",
+  "usage_sample": [
+    {
+      "content": "{\"run_jenkins\":{\"title\":\"Triggering Jenkins Job\",\"image\":\"codefresh/cf-run-jenkins-job\",\"environment\":[\"JENKINS_URL=http://<jenkins host>:<jenkins port>\",\"JENKINS_USER=<jenkins user name>\",\"JENKINS_TOKEN=<jenkins token>\",\"JENKINS_JOB=<jenkins job name>\"]}}",
+      "annotation": [
+        {
+          "name": "JENKINS_URL",
+          "description": "Jenkins Master URL"
+        },
+        {
+          "name": "JENKINS_USER",
+          "description": "Jenkins User Name"
+        },
+        {
+          "name": "JENKINS_TOKEN",
+          "description": "Jenkins Token"
+        },
+        {
+          "name": "JENKINS_JOB",
+          "description": "Jenkins Job Name"
+        }
+      ]
+    }
+  ]
+}

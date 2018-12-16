@@ -1,0 +1,50 @@
+{
+  "title": "Scan Image with TwistLock",
+  "description": "Scan a registry-hosted Docker image using TwistLock",
+  "handle": "custom-twistlock-scan-image",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Francisco Cocozza",
+  "usage_sample": [
+    {
+      "content": "{\"tls_scan\":{\"title\":\"Twistlock Scan\",\"image\":\"codefresh/cfstep-twistlock\",\"environment\":[\"TL_REGISTRY=https://r.cf-cd.com\",\"TL_IMAGE_NAME=codefresh/twistlockdemo\",\"TL_IMAGE_TAG=${{CF_SHORT_REVISION}}\"],\"on_success\":{\"metadata\":{\"set\":{\"${{BuildingDockerImage.imageId}}\":{\"SECURITY_SCAN\":\"true\"}}}},\"on_fail\":{\"metadata\":{\"set\":{\"${{BuildingDockerImage.imageId}}\":{\"SECURITY_SCAN\":\"false\"}}}}}}",
+      "annotation": [
+        {
+          "name": "TL_CONSOLE_HOSTNAME",
+          "description": "Hostname/ip"
+        },
+        {
+          "name": "TL_CONSOLE_PORT",
+          "description": "Port"
+        },
+        {
+          "name": "TL_CONSOLE_USERNAME",
+          "description": "Username"
+        },
+        {
+          "name": "TL_CONSOLE_PASSWORD",
+          "description": "Password"
+        },
+        {
+          "name": "TL_COMPLIANCE_THRESHOLD",
+          "description": "Sets the the minimal severity compliance issue that returns a fail exit code (low/medium/high/critical)"
+        },
+        {
+          "name": "TL_VULNERABILITY_THRESHOLD",
+          "description": "Sets the minimal severity vulnerability that returns a fail exit code (low/medium/high/critical)"
+        },
+        {
+          "name": "TL_REGISTRY",
+          "description": "Registry URL. (e.g.: docker.io, cfcr.io). This should match the Registry URL set at Twistlock Console."
+        },
+        {
+          "name": "TL_IMAGE_NAME",
+          "description": "The full image name (excluding the registry URL) (e.g.: myrepo/myimage)"
+        },
+        {
+          "name": "TL_IMAGE_TAG",
+          "description": "The tag of the image to scan."
+        }
+      ]
+    }
+  ]
+}

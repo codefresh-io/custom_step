@@ -1,0 +1,38 @@
+{
+  "title": "Notify Slack Channel",
+  "description": "Use Codefresh Slack plugin to send a message to a channel.",
+  "handle": "notify-slack-channel",
+  "create": "2018-12-11T14:00:00.687Z",
+  "author": "Pasha Kostohrys",
+  "usage_sample": [
+    {
+      "content": "{\"SendToSlack\":{\"title\":\"Sending message to slack\",\"image\":\"codefresh/slacknotifier\",\"environment\":[\"SLACK_HOOK_URL=${{SLACK_HOOK_URL}}\",\"SLACK_TEXT=cool\",\"SLACK_TEMPLATE_FIELDS=${{SLACK_TEMPLATE_FIELDS}}\",\"SLACK_TEMPLATE_BODY=${{SLACK_TEMPLATE_BODY}}\",\"MODE=template\"]}}",
+      "annotation": [
+        {
+          "name": "WEBHOOK_URL",
+          "description": "Url to the channel"
+        },
+        {
+          "name": "SLACK_TEXT",
+          "description": "The message that will be sent"
+        },
+        {
+          "name": "SLACK_ATTACHMENTS",
+          "description": "Print verbose output"
+        },
+        {
+          "name": "MODE",
+          "description": "Mode (\"template\" / \"simple\")"
+        },
+        {
+          "name": "SLACK_TEMPLATE_FIELDS",
+          "description": "Fields for override (template mode)"
+        },
+        {
+          "name": "SLACK_TEMPLATE_BODY",
+          "description": "Message body (template mode)"
+        }
+      ]
+    }
+  ]
+}

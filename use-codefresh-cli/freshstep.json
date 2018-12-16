@@ -1,0 +1,18 @@
+{
+  "title": "Use Codefresh CLI",
+  "description": "Use the Codefresh CLI to perform application operation",
+  "handle": "use-codefresh-cli",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Itay Shakuri",
+  "usage_sample": [
+    {
+      "content": "{\"annotate_image\":{\"image\":\"codefresh/cli\",\"description\":\"annotates image with metadata\",\"command\":\"annotate image IMAGE_ID -a key1=value1 -a key2=value2\"},\"run_pipeline\":{\"image\":\"codefresh/cli\",\"description\":\"run a pipeline\",\"command\":\"run PIPELINE_ID -b master\"}}",
+      "annotation": [
+        {
+          "name": "CFCONFIG",
+          "description": "Path for cfconfig file path (default: ${HOME}/.cfconfig"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Canary Deployment",
+  "description": "Perform canary deployments on a Kubernetes cluster.",
+  "handle": "kubernetes-deployment-with-canaries",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Kostis",
+  "usage_sample": [
+    {
+      "content": "{\"canaryDeploy\":{\"title\":\"Deploying new version ${{CF_SHORT_REVISION}}\",\"image\":\"codefresh/k8s-canary:master\"}}",
+      "annotation": [
+        {
+          "name": "WORKING_VOLUME",
+          "description": "Working Volume"
+        },
+        {
+          "name": "SERVICE_NAME",
+          "description": "Service Name"
+        },
+        {
+          "name": "DEPLOYMENT_NAME",
+          "description": "Deployment Name"
+        },
+        {
+          "name": "TRAFFIC_INCREMENT",
+          "description": "Traffic Increment"
+        },
+        {
+          "name": "NEW_VERSION",
+          "description": "New Version"
+        },
+        {
+          "name": "SLEEP_SECONDS",
+          "description": "Sleep Seconds"
+        },
+        {
+          "name": "NAMESPACE",
+          "description": "Namespace"
+        },
+        {
+          "name": "KUBE_CONTEXT",
+          "description": "Kubernetes Context"
+        }
+      ]
+    }
+  ]
+}

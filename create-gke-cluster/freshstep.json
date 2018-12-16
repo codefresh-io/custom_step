@@ -1,0 +1,30 @@
+{
+  "title": "Create GKE Cluster",
+  "description": "Use Codefresh GKE plugin to create GKE Kubernetes cluster for integration tests",
+  "handle": "create-gke-cluster",
+  "create": "2018-12-11T14:00:00.687Z",
+  "author": "Konstantin Klevensky",
+  "usage_sample": [
+    {
+      "content": "{\"create-cluster\":{\"image\":\"codefresh/plugin-gke\",\"commands\":[\"gke-create gke-test-cluster-1 --zone=us-central1-a --num-nodes 2 --machine-type n1-standard-2\"]},\"deploy-my-service\":{\"image\":\"codefresh/plugin-gke\",\"commands\":[\"kubectl get pods --all-namespaces -owide\"]},\"clean\":{\"image\":\"codefresh/plugin-gke\",\"commands\":[\"gke-delete gke-test-cluster-1 --zone=us-central1-a\"]}}",
+      "annotation": [
+        {
+          "name": "GOOGLE_SERVICE_ACCOUNT_KEY",
+          "description": "Google Service Account Key value"
+        },
+        {
+          "name": "CLOUDSDK_COMPUTE_ZONE",
+          "description": "Google Compute zone"
+        },
+        {
+          "name": "CLOUDSDK_COMPUTE_REGION",
+          "description": "Google Compute region"
+        },
+        {
+          "name": "GKE_CLUSTER_NAME",
+          "description": "Name of GKE cluster to create"
+        }
+      ]
+    }
+  ]
+}

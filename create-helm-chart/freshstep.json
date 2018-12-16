@@ -1,0 +1,58 @@
+{
+  "title": "Create Helm Chart",
+  "description": "Creates and publishes a Helm Chart",
+  "handle": "create-helm-chart",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Rhia Pugh",
+  "usage_sample": [
+    {
+      "content": "{\"helm_upgrade\":{\"image\":\"codefresh/cfstep-helm:2.9.0\",\"environment\":[\"key=value\"]}}",
+      "annotation": [
+        {
+          "name": "ACTION",
+          "description": "Operation mode (install/push/auth)"
+        },
+        {
+          "name": "CHART_REF",
+          "description": "Chart reference to use"
+        },
+        {
+          "name": "KUBE_CONTEXT",
+          "description": "Kubernetes context to use. The name of the cluster as configured in Codefresh"
+        },
+        {
+          "name": "RELEASE_NAME",
+          "description": "Helm release name. If the release exists it will be upgraded"
+        },
+        {
+          "name": "NAMESPACE",
+          "description": "Target Kubernetes namespace to deploy to"
+        },
+        {
+          "name": "TILLER_NAMESPACE",
+          "description": "Kubernetes namespace where tiller is installed"
+        },
+        {
+          "name": "CHART_VERSION",
+          "description": "Override or set the chart version"
+        },
+        {
+          "name": "CHART_REPO_URL",
+          "description": "Helm chart repository URL. If a Helm repository context is attached to the pipeline, this setting is ignored."
+        },
+        {
+          "name": "VALUESFILE_",
+          "description": "Values file to provide to Helm (as –file). a.k.a CUSTOMFILE but CUSTOMFILE shouldn’t be used anymore."
+        },
+        {
+          "name": "VALUE_",
+          "description": "Value to provide to Helm (as –set). a.k.a CUSTOM but CUSTOM shouldn’t be used anymore. If a variable already contains a _ (underscore) in it’s name, replace it with __ (double underscore)."
+        },
+        {
+          "name": "CMD_PS",
+          "description": "Command Postscript - this will be appended as is to the generated helm command string. Can be used to set additional parameters supported by the command but not exposed as configuration options."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Deploy to Amazon ECS",
+  "description": "Deploys to an Amazon ECS Service",
+  "handle": "deploy-to-amazon-ecs",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Oleg Verhovsky",
+  "usage_sample": [
+    {
+      "content": "{\"build_step\":{\"type\":\"build\",\"image-name\":\"repo/image:tag\"},\"push_to_registry\":{\"type\":\"push\",\"candidate\":\"${{build-step}}\",\"tag\":\"${{CF_BRANCH}}\"},\"deploy_to_ecs\":{\"image\":\"codefresh/cf-deploy-ecs\",\"commands\":[\"cfecs-update <aws-region> <ecs-cluster-name> <ecs-service-name>\"],\"environment\":[\"AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}\",\"AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}\"],\"when\":{\"name\":\"Execute for 'master' branch\",\"condition\":\"'${{CF_BRANCH}}' == 'master'\"}}}",
+      "annotation": [
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "description": "AWS Access Key Id"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "description": "AWS Secret Access Key"
+        }
+      ]
+    }
+  ]
+}

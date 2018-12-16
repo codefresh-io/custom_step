@@ -1,0 +1,22 @@
+{
+  "title": "Manage Bintray Releases",
+  "description": "A Codefresh freestyle step to manage releases in JFrog Bintray",
+  "handle": "manage-jfrog-bintray",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Kostis Kapelonis",
+  "usage_sample": [
+    {
+      "content": "{\"DownloadNewVersion\":{\"stage\":\"Bintray download\",\"title\":\"Download from Bintray\",\"image\":\"codefresh/cfstep-bintray:master\",\"working_directory\":\"download-example/\",\"environment\":[\"BINTRAY_COMMAND=dlv\",\"BINTRAY_ARGS= codefresh-demo/test/cf-demo/v4.0 --unpublished\"]}}",
+      "annotation": [
+        {
+          "name": "BINTRAY_USER",
+          "description": "Username for Bintray"
+        },
+        {
+          "name": "BINTRAY_KEY",
+          "description": "API key for bintray"
+        }
+      ]
+    }
+  ]
+}

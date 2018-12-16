@@ -1,0 +1,42 @@
+{
+  "title": "Build using Azure ACR",
+  "description": "Build using Azure ACR",
+  "handle": "build-using-azure-acr",
+  "create": "2018-12-11T09:05:34.742Z",
+  "author": "Amir Gabay",
+  "usage_sample": [
+    {
+      "content": "{\"cf-az-build\":{\"image\":\"codefresh/cf-azure-builder\",\"environment\":[\"IMAGE=<image name>\",\"TAG=<tag name>\",\"ACR_NAME=<acr registry name>\",\"APP_ID=<azure service principal application id>\",\"PASSWORD=<azure service principal password>\",\"TENANT=<azure ad tenant id>\",\"DOCKERFILE_PATH=<dockerfile path>\"]}}",
+      "annotation": [
+        {
+          "name": "IMAGE",
+          "description": "Image name"
+        },
+        {
+          "name": "TAG",
+          "description": "Tag name"
+        },
+        {
+          "name": "ACR_NAME",
+          "description": "ACR registry name"
+        },
+        {
+          "name": "APP_ID",
+          "description": "Azure service principal application id"
+        },
+        {
+          "name": "PASSWORD",
+          "description": "Azure service principal password"
+        },
+        {
+          "name": "TENANT",
+          "description": "Azure ad tenant id"
+        },
+        {
+          "name": "DOCKERFILE_PATH",
+          "description": "Dockerfile path (default - working_dir/Dockerfile)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Deploy to DC/OS cluster",
+  "description": "This image makes an application deployment on DC/OS cluster using application definition json file.",
+  "handle": "deploy-to-dcos",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Itay Shakuri",
+  "usage_sample": [
+    {
+      "content": "{\"BuildingDockerImage\":{\"type\":\"build\",\"image_name\":\"applcation/image\"},\"PushToRegistry\":{\"type\":\"push\",\"candidate\":\"${{BuildingDockerImage}}\"},\"DeployToDcos\":{\"image\":\"codefresh/cf-deploy-dcos:latest\",\"working_directory\":\"${{main_clone}}\",\"commands\":[\"/cf-deploy-dcos deployment.tmpl\"],\"environment\":[\"DCOS_URL=${{DCOS_URL}}\",\"DCOS_CLUSTER_NAME=${{DCOS_CLUSTER_NAME}}\",\"DCOS_CLUSTER_ID=${{DCOS_CLUSTER_ID}}\",\"DCOS_DCOS_ACS_TOKEN=${{DCOS_DCOS_ACS_TOKEN}}\",\"DCOS_SSL_VERIFY=${{DCOS_SSL_VERIFY}}\",\"APP_ID=${{APP_ID}}\",\"IMAGE_NAME=${{IMAGE_NAME}}\",\"IMAGE_TAG=${{IMAGE_TAG}}\"]}}",
+      "annotation": [
+        {
+          "name": "DCOS_URL",
+          "description": "DC/OS cluster URL"
+        },
+        {
+          "name": "DCOS_CLUSTER_NAME",
+          "description": "DC/OS cluster name"
+        },
+        {
+          "name": "DCOS_CLUSTER_ID",
+          "description": "DC/OS cluster ID"
+        },
+        {
+          "name": "DCOS_DCOS_ACS_TOKEN",
+          "description": "DC/OS cluster existing user's token (make it encrypted)"
+        },
+        {
+          "name": "DCOS_SSL_VERIFY",
+          "description": "Default is true, if we want to bypass SSL certificate verification - set it to false"
+        },
+        {
+          "name": "APP_ID",
+          "description": "Application name"
+        },
+        {
+          "name": "IMAGE_NAME",
+          "description": "Application image name"
+        },
+        {
+          "name": "IMAGE_TAG",
+          "description": "Application image tag"
+        }
+      ]
+    }
+  ]
+}

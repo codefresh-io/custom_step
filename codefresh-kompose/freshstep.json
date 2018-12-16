@@ -1,0 +1,42 @@
+{
+  "title": "Codefresh Kompose Plugin",
+  "description": "Use Codefresh Kompose plugin to deploy or convert a Docker Compose file into Kubernetes resources.",
+  "handle": "codefresh-kompose",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Itay Shakuri",
+  "usage_sample": [
+    {
+      "content": "{\"release_to_env\":{\"image\":\"codefresh/plugin-kompose:v1.5.0\"}}",
+      "annotation": [
+        {
+          "name": "KUBE_CONTEXT",
+          "description": "Working Volume"
+        },
+        {
+          "name": "FILE",
+          "description": "Service Name"
+        },
+        {
+          "name": "NAMESPACE",
+          "description": "Deployment Name"
+        },
+        {
+          "name": "REPLICAS",
+          "description": "Traffic Increment"
+        },
+        {
+          "name": "VOLUMES",
+          "description": "New Version"
+        },
+        {
+          "name": "DRY_RUN",
+          "description": "Sleep Seconds"
+        },
+        {
+          "name": "DEBUG",
+          "description": "Namespace"
+        }
+      ]
+    }
+  ]
+}

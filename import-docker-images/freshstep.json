@@ -1,0 +1,38 @@
+{
+  "title": "Import Docker Images Codefresh Plugin",
+  "description": "Import Docker Images Codefresh Plugin",
+  "handle": "import-docker-images",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Alexei Ledenev",
+  "usage_sample": [
+    {
+      "content": "{\"main_build\":{\"type\":\"build\",\"title\":\"Building import-image container ...\",\"description\":\"build import-image container\",\"image_name\":\"codefresh/import-images\"},\"push_image\":{\"type\":\"push\",\"title\":\"Pushing import-image:latest ...\",\"description\":\"Push import-image image to the DockerHub\",\"candidate\":\"${{main_build}}\",\"tag\":\"latest\",\"image_name\":\"codefresh/import-images\"}}",
+      "annotation": [
+        {
+          "name": "IMAGES",
+          "description": "List of comma separated image names (with tags)"
+        },
+        {
+          "name": "REGISTRY",
+          "description": "Registry DNS name (including port if needed, default to docker.io)"
+        },
+        {
+          "name": "USERNAME",
+          "description": "Docker registry user name (optional)"
+        },
+        {
+          "name": "PASSWORD",
+          "description": "Docker registry password (optional)"
+        },
+        {
+          "name": "CF_URL",
+          "description": "Codefresh URL"
+        },
+        {
+          "name": "CF_API_TOKEN",
+          "description": "Codefresh API Token"
+        }
+      ]
+    }
+  ]
+}

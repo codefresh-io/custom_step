@@ -1,0 +1,18 @@
+{
+  "title": "Send message to Slack",
+  "description": "Sends a message to a Slack channel",
+  "handle": "custom-slack-send-message",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Oleg Sucharevich",
+  "usage_sample": [
+    {
+      "content": "{\"send_to_slack\":{\"title\":\"Sending message to slack\",\"image\":\"codefresh/slack-message-sender\",\"commands\":[\"slack-message-sender send\"],\"environment\":[\"WEBHOOK_URL=${{SLACK_WEBHOOK_URL}}\",\"SLACK_MESSAGE=${{CF_COMMIT_MESSAGE}}\"]}}",
+      "annotation": [
+        {
+          "name": "SLACK_WEBHOOK_URL",
+          "description": "The message to send to the configured channel"
+        }
+      ]
+    }
+  ]
+}

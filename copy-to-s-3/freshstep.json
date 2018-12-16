@@ -1,0 +1,34 @@
+{
+  "title": "Copy to S3",
+  "description": "This is a plugin to simplify copying from codefresh pipeline to and from Amazon S3 buckets.",
+  "handle": "copy-to-s-3",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Alex Kogan",
+  "usage_sample": [
+    {
+      "content": "{\"Copy to S3\":{\"image\":\"codefresh/s3copy\",\"environment\":[\"SOURCE=\\\"path/to/somefile\\\"\",\"DESTINATION=\\\"s3://path-to-s3-bucket\\\"\"]}}",
+      "annotation": [
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "description": "AWS Access Key"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "description": "AWS Secret Access Key"
+        },
+        {
+          "name": "AWS_DEFAULT_REGION",
+          "description": "AWS Default Region"
+        },
+        {
+          "name": "SOURCE",
+          "description": "Source Folder"
+        },
+        {
+          "name": "DESTINATION",
+          "description": "Destination Folder"
+        }
+      ]
+    }
+  ]
+}

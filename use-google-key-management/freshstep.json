@@ -1,0 +1,34 @@
+{
+  "title": "Use Google KMS",
+  "description": "Facilitates work with Google Key Management Service for such operations as encrypting and decrypting",
+  "handle": "use-google-key-management",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Will Malone",
+  "usage_sample": [
+    {
+      "content": "{\"google_kms\":{\"image\":\"codefresh/google-kms\",\"commands\":[\"kms encrypt VALUE_1 VALUE_n\"]}}",
+      "annotation": [
+        {
+          "name": "KMS_PROJECT",
+          "description": "GCP project name in which your KMS entities are present"
+        },
+        {
+          "name": "KMS_LOCATION",
+          "description": "Google KMS location"
+        },
+        {
+          "name": "KMS_KEYRING",
+          "description": "Google KMS keyring"
+        },
+        {
+          "name": "KMS_KEY",
+          "description": "Google KMS key"
+        },
+        {
+          "name": "GCP_SA_KEY",
+          "description": "Google Service Account Key (JSON)"
+        }
+      ]
+    }
+  ]
+}

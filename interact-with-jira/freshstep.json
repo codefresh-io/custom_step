@@ -1,0 +1,26 @@
+{
+  "title": "Interact with Jira",
+  "description": "Use Codefresh Jira plugin to interact with a Jira instance.",
+  "handle": "interact-with-jira",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Anton Weiss",
+  "usage_sample": [
+    {
+      "content": "{\"UpdateJira\":{\"title\":\"Update Jira Issue\",\"image\":\"otomato/jira-cli:alpine\",\"commands\":[\"yes n | jira-cli update ${JIRAID} --comment 'New docker image otomato/bringon:${{CF_SHORT_REVISION}}. Build log is here ${{CF_BUILD_URL}}' --jira-url ${JIRA_URL} -u ${JIRA_USR} -p ${JIRA_PWD}\"],\"when\":{\"condition\":{\"all\":{\"JiraIdFound\":\"match(\\\"${JIRAID}\\\", \\\"[A-Z]+-[0-9]+\\\", true)\"}}}}}",
+      "annotation": [
+        {
+          "name": "JIRA_URL",
+          "description": "List of comma separated image names (with tags)"
+        },
+        {
+          "name": "JIRA_USR",
+          "description": "Registry DNS name (including port if needed, default to docker.io)"
+        },
+        {
+          "name": "JIRA_PWD",
+          "description": "Docker registry user name (optional)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Run Docker Services",
+  "description": "Use Codefresh docker-service plugin to create docker daemon and then use run on it any of docker build|run|... or docker-compose on your repository",
+  "handle": "docker-service",
+  "create": "2018-12-05T13:40:20.687Z",
+  "author": "Kosta",
+  "usage_sample": [
+    {
+      "content": "{\"create-my-docker\":{\"image\":\"codefresh/docker-service\",\"commands\":[\"docker-service-create  --driver amazonec2 --amazonec2-instance-type m4.large my-docker\"]},\"build-on-my-docker\":{\"image\":\"codefresh/docker-service\",\"commands\":[\"docker build -t mycompany/repo:${{CF_BRANCH}} ${{CF_VOLUME_PATH}}/\"]},\"run-on-my-docker\":{\"image\":\"codefresh/docker-service\",\"commands\":[\"docker run -d mycompany/repo:${{CF_BRANCH}}\"]},\"delete-my-docker\":{\"image\":\"codefresh/docker-service\",\"commands\":[\"docker-service-delete my-docker\"]},\"clean\":{\"image\":\"codefresh/docker-service\",\"commands\":[\"docker-service-clean\"]}}",
+      "annotation": [
+        {
+          "name": "DOCKER_MACHINE_NAME",
+          "description": "Docker Machine Name"
+        }
+      ]
+    }
+  ]
+}
